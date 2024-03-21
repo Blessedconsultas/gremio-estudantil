@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica</title>
+</head>
+<body>
+    <h1>Urna Eletrônica</h1>
+    <h2>Por favor, vote em um candidato:</h2>
+    <form action="/votar" method="post">
+        {% for candidato, _ in candidatos.items() %}
+            <input type="radio" name="candidato" value="{{ candidato }}"> {{ candidato }}<br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Votar">
+    </form>
+    <br>
+    <a href="/resultados">Ver Resultados</a>
+</body>
+</html>
